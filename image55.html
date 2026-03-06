@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gallery - Stranda idrettspark</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { 
+            background:#111; 
+            color:white; 
+            font-family:Arial; 
+            text-align:center; 
+            margin:0; 
+        }
+        nav { 
+            background:#333; 
+            padding:15px; 
+        }
+        nav a { 
+            color:white; 
+            margin:0 15px; 
+            text-decoration:none; 
+            font-weight:bold; 
+        }
+        nav a:hover { 
+            color:#00ff88; 
+        }
+
+        /* Gallery styling */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            padding: 20px;
+        }
+        .gallery img {
+            width: 300px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Modal styling */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.9);
+        }
+        .modal-content {
+            background-color: #222;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 600px;
+            color: #fff;
+            text-align: left;
+        }
+        .close {
+            color: #00ff88;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close:hover {
+            color: #ff4444;
+        }
+
+        h2 { margin-top: 0; color:#00ff88; }
+        ul { margin-left: 20px; }
+        footer { 
+            background:#1f1f1f; 
+            padding:20px; 
+            margin-top:20px; 
+        }
+    </style>
+</head>
+
+<body>
+
+<nav>
+    <a href="index55.html">Home</a>
+    <a href="about55.html">About</a>
+    <a href="image55.html">Gallery</a>
+    <a href="videos55.html">Videos</a>
+    <a href="contact55.html">Contact</a>
+</nav>
+
+<h1>Training Gallery</h1>
+
+<div class="gallery">
+    <img src="leg press.jpg" alt="Leg Press" data-title="Leg Press" data-details="
+Step 1: Sit on the leg press machine and place your feet shoulder-width apart on the platform.
+Step 2: Push the platform upward until your legs are almost fully extended (avoid locking knees).
+Step 3: Slowly bend your knees to lower the platform back to starting position.
+Sets/Reps: 4 sets of 12-15 reps
+Tips: Keep your back and hips pressed against the seat, control the movement." />
+
+    <img src="what is this for.jpg" alt="Shoulder Press" data-title="Shoulder Press" data-details="
+Step 1: Sit on a shoulder press machine or bench with back support.
+Step 2: Grasp the handles at shoulder height with palms forward.
+Step 3: Push the handles upward until your arms are fully extended.
+Step 4: Slowly return to starting position.
+Sets/Reps: 3-4 sets of 10-12 reps
+Tips: Avoid arching your back, keep core engaged." />
+
+    <img src="pull this.jpg" alt="Horizontal Row" data-title="Horizontal Row" data-details="
+Step 1: Sit on the horizontal row machine and grasp the handles.
+Step 2: Keep your chest upright and pull the handles toward your torso.
+Step 3: Squeeze your shoulder blades together at the end of the movement.
+Step 4: Slowly return to starting position.
+Sets/Reps: 3 sets of 12 reps
+Tips: Avoid using momentum, control both pull and release." />
+
+    <img src="dont know the name.jpg" alt="Chest Press" data-title="Chest Press" data-details="
+Step 1: Sit on the chest press machine and grasp the handles at chest level.
+Step 2: Push the handles forward until your arms are fully extended.
+Step 3: Slowly return the handles to starting position.
+Sets/Reps: 3-4 sets of 10-12 reps
+Tips: Keep shoulders down and back, avoid locking elbows." />
+</div>
+
+<!-- Modal -->
+<div id="infoModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 id="modalTitle"></h2>
+        <pre id="modalDetails" style="white-space: pre-wrap;"></pre>
+    </div>
+</div>
+
+<footer>
+    <p>© 2026 Stranda idrettspark</p>
+</footer>
+
+<script>
+    const modal = document.getElementById('infoModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDetails = document.getElementById('modalDetails');
+    const closeBtn = document.querySelector('.close');
+
+    document.querySelectorAll('.gallery img').forEach(img => {
+        img.addEventListener('click', () => {
+            modalTitle.textContent = img.dataset.title;
+            modalDetails.textContent = img.dataset.details.trim();
+            modal.style.display = 'block';
+        });
+    });
+
+    closeBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+</script>
+
+</body>
+</html>

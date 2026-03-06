@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Videos - Stranda idrettspark</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+body{
+    background:#0f0f0f;
+    color:white;
+    font-family:Arial;
+    margin:0;
+}
+
+/* Navigation */
+
+nav{
+    background:#202020;
+    padding:15px;
+    text-align:center;
+}
+
+nav a{
+    color:white;
+    margin:0 15px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#00ff88;
+}
+
+/* Title */
+
+h1{
+    text-align:center;
+    margin-top:30px;
+}
+
+/* Video Grid (like YouTube) */
+
+.video-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+    padding:30px;
+}
+
+.video-card{
+    background:#181818;
+    border-radius:10px;
+    padding:10px;
+    transition:0.3s;
+}
+
+.video-card:hover{
+    transform:scale(1.03);
+}
+
+video{
+    width:100%;
+    border-radius:10px;
+}
+
+/* Footer */
+
+footer{
+    background:#1f1f1f;
+    text-align:center;
+    padding:20px;
+    margin-top:20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<a href="index55.html">Home</a>
+<a href="about55.html">About</a>
+<a href="image55.html">Gallery</a>
+<a href="videos55.html">Videos</a>
+<a href="contact55.html">Contact</a>
+</nav>
+
+<h1>Training Videos</h1>
+
+<div class="video-container">
+
+<div class="video-card">
+<video controls>
+<source src="MVI_0917.MP4">
+</video>
+<p>Shoulder Press</p>
+</div>
+
+<div class="video-card">
+<video controls>
+<source src="MVI_0918.MP4">
+</video>
+<p>Horizontal Row</p>
+</div>
+
+<div class="video-card">
+<video controls>
+<source src="MVI_0919.MP4">
+</video>
+<p>Chest Press</p>
+</div>
+
+</div>
+
+<footer>
+<p>© 2026 Stranda idrettspark</p>
+</footer>
+
+</body>
+</html>
